@@ -11,12 +11,14 @@ services:
       - ALLOW_ANONYMOUS_LOGIN=yes
   kafka:
     image: docker.io/bitnami/kafka:3.5
+    container_name: kafka
     ports:
-      - "9092:9092"
+      - 9092:9092
     volumes:
       - "kafka_data:/bitnami"
     environment:
       - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
     depends_on:
       - zookeeper
   kafka-ui:

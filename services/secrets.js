@@ -8,6 +8,5 @@ module.exports = async function secrets() {
   };
 
   const vault = require('node-vault')(options);
-
   return await vault.read('kv/iot-streamer');
 };
