@@ -26,3 +26,11 @@ vault operator unseal
 vault login  
 vault secrets enable kv  
 vault kv put kv/iot-streamer RTDgtfsRT='realT!m3Feed'
+
+#### Elasticsearch
+
+curl --cacert ./infrastructure/elasticsearch/certs/ca.crt -u elastic:changeme https://localhost:9200
+
+#### Kibana
+
+http://localhost:5601
