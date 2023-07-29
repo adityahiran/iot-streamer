@@ -48,7 +48,7 @@ module.exports = async function poll(feedUsername, feedPassword) {
         else if (message['currentStatus'] === 2)
           message['currentStatusDescription'] = 'IN_TRANSIT_TO';
         await producer.send({
-          topic: 'raw',
+          topic: process.env.TOPIC,
           messages: [
             { key: message['vehicleId'], value: JSON.stringify(message) }
           ]
